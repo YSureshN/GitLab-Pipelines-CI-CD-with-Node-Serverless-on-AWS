@@ -62,12 +62,12 @@ functions:
 
   helloWorld:
     handler: handler.helloWorldConsole
-    name: helloWorldConsole-Lambda-Function
+    name: ${opt:stage, 'stage'}-helloWorldConsole-Lambda-Function
 
   # API    
   # utility:
   #   handler: handler.helloWorld
-  #   name: Serverless-CI-Deplly-${opt:stage, 'stage'}-HelloWorld
+  #   name: ${opt:stage, 'stage'}-Serverless-CI-Deplly--HelloWorld
   #   events:
 
   #   # GET /helloworld/ 
