@@ -3,7 +3,7 @@
     "name": "PRODUCTION"
   },
   "vpc": {
-    "securityGroupId": "sg-08cd87ee2b2ceb665",
+    "securityGroupId": "sg-02ddb2dc432f58ab4",
     "subnetId1": "subnet-086969d4c75cc26f5",
     "subnetId2": "subnet-0be42a42b01a8c6df"
   },

@@ -15,7 +15,7 @@ const headers = {
 /**
  * GET /helloworld
  */
-const helloWorld = async (event) => {
+module.exports.helloWorld = async (event) => {
   const lambdaProxyResponse = { 
     statusCode: 200,
     body: {message: 'Hello World!'},
@@ -23,3 +23,7 @@ const helloWorld = async (event) => {
   }
   return lambdaProxyResponse;
 };
+
+module.exports.helloWorldConsole = async (event) => {
+  return { message: 'Hello World!!!' };
+}
