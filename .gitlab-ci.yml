@@ -12,7 +12,7 @@ build_stage:
   before_script:
     - npm config set prefix /usr/local
     - npm install -g serverless
+    - npm install
   script:     
     - serverless deploy --verbose
   environment: stage
-  
