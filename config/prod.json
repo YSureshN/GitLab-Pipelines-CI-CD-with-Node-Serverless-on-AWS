@@ -4,8 +4,8 @@
   },
   "vpc": {
     "securityGroupId": "sg-02ddb2dc432f58ab4",
-    "subnetId1": "subnet-086969d4c75cc26f5",
-    "subnetId2": "subnet-0be42a42b01a8c6df"
+    "subnetId1": "subnet-0256653bdb421a6d9",
+    "subnetId2": "subnet-094b98c068f6fe0d0"
   },
   "db": {
     "host": "",
