@@ -1,11 +1,11 @@
 {
   "theEnv": {
-    "name": "STAGING"
+    "name": ""
   },
   "vpc": {
-    "securityGroupId": "sg-02ddb2dc432f58ab4",
-    "subnetId1": "subnet-0256653bdb421a6d9",
-    "subnetId2": "subnet-094b98c068f6fe0d0"
+    "securityGroupId": "",
+    "subnetId1": "",
+    "subnetId2": ""
   },
   "db": {
     "host": "",
