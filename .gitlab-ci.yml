@@ -6,13 +6,14 @@ stages:
 
 build_stage: 
   stage: build  
-  image: brentley/awscli
+  image: node:latest
   only:
     - stage 
   before_script:
     - npm config set prefix /usr/local
     - npm install -g serverless
     - npm install
+    - apt install python3-pip
   script:     
     - serverless deploy --verbose
   environment: stage
