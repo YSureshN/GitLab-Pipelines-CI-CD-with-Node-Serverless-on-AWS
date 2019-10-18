@@ -1,0 +1,13 @@
+# Reference: https://docs.gitlab.com/ee/ci/yaml/README.html
+
+stages: 
+ - build
+
+build_stage: 
+  stage: build  
+  image: node 
+  only:
+    - stage 
+  script:     
+    - echo 'hello world'
+

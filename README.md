@@ -6,5 +6,5 @@ Simple project that shows how to deploy a Node Serverless project using GitLab P
 - Install dependencies: `npm install`
 
 # Deployment Strategy & Environments
-
+- sls deploy
 

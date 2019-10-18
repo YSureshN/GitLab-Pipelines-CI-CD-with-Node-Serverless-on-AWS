@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://gitlab.com/mburolla/serverless-ci-deploy/issues"
   },
-  "homepage": "https://gitlab.com/mburolla/serverless-ci-deploy#readme"
+  "homepage": "https://gitlab.com/mburolla/serverless-ci-deploy#readme",
+  "dependencies": {
+    "serverless-plugin-warmup": "^4.7.0-rc.1"
+  }
 }
