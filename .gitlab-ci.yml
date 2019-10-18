@@ -1,0 +1,13 @@
+# Reference: https://docs.gitlab.com/ee/ci/yaml/README.html
+
+stages: 
+ - deploy
+
+deploy_stage: 
+  stage: deploy  
+  image: node 
+  only:
+    - stage  # The name of the GitLab branch.
+  script:     
+    # - npm run build sls deploy 
+
