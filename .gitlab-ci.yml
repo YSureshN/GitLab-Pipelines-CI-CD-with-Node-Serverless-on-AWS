@@ -3,7 +3,7 @@
 stages: 
  - deploy
 
-deploy_stage: 
+deploy: 
   stage: deploy  
   image: node 
   only:
