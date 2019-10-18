@@ -8,7 +8,7 @@ provider:
   tracing:
     lambda: true # x-ray support
   environment:
-    THE_ENV: ${file(./config/${self:provider.stage}.json):TheEnv.name}
+    THE_ENV: ${file(./config/${self:provider.stage}.json):theEnv.name}
     DB_HOST: ${file(./config/${self:provider.stage}.json):db.host}
     DB_USER: ${file(./config/${self:provider.stage}.json):db.user}
     DB_PWD: ${file(./config/${self:provider.stage}.json):db.password}
