@@ -13,6 +13,7 @@ build_stage:
     - npm config set prefix /usr/local
     - npm install -g serverless
     - npm install
+    - pip install awscli
     - aws s3 cp s3://sls-config/stage.json ./config/stage.json
   script:     
     - serverless deploy --verbose
