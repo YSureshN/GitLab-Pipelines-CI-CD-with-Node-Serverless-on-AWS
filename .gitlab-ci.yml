@@ -6,7 +6,7 @@ stages:
 
 build_stage: 
   stage: build  
-  image: node:latest
+  image: brentley/awscli
   only:
     - stage 
   before_script:
