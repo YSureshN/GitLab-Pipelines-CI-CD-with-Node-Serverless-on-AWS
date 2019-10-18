@@ -5,8 +5,6 @@ provider:
   name: aws
   stage: ${opt:stage, 'stage'} # stage is our default env, `sls deploy` defaults to stage.
   role: arn:aws:iam::103346953322:role/serverless-ci-deploy-lambda-role
-  tracing:
-    lambda: true # x-ray support
   environment:
     THE_ENV: ${file(./config/${self:provider.stage}.json):theEnv.name}
     DB_HOST: ${file(./config/${self:provider.stage}.json):db.host}
