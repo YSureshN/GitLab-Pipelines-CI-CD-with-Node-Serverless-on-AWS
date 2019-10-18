@@ -13,7 +13,7 @@ build_stage:
     - npm config set prefix /usr/local
     - npm install -g serverless
     - npm install
-    - sudo apt-get -y install python3-pip
+    - yum -y install python36u
   script:     
     - serverless deploy --verbose
   environment: stage
