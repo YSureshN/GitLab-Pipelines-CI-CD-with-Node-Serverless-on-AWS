@@ -15,6 +15,7 @@ build_stage:
     - npm install
     - apt-get update
     - apt-get -y install python3-pip
+    - pip3 install awscli --upgrade --user
   script:     
     - serverless deploy --verbose
   environment: stage
