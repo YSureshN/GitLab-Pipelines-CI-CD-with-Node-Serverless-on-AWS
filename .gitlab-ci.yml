@@ -13,7 +13,6 @@ build_stage:
     - npm config set prefix /usr/local
     - npm install -g serverless
     - npm install
-    - pip install awscli
   script:     
     - serverless deploy --verbose
   environment: stage
