@@ -22,7 +22,7 @@ provider:
 
   deploymentBucket:
     name: ${opt:stage, 'stage'}-sls-deploy
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   memorySize: 512 
   timeout: 10 
 
