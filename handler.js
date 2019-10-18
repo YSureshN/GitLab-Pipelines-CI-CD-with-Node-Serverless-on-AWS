@@ -8,8 +8,7 @@
 const headers = { 
   'x-api-version' : '0.0.1',
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Credentials': true,
-  'x-cit-env': process.env.CIT_ENV
+  'Access-Control-Allow-Credentials': true
 };
 
 /**
