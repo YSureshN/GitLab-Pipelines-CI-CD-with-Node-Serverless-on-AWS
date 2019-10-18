@@ -1,0 +1,19 @@
+{
+  "name": "serverless-ci-deploy",
+  "version": "1.0.0",
+  "description": "Simple project that shows how to deploy a Node Serverless project using GitLab Pipelines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/mburolla/serverless-ci-deploy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mburolla/serverless-ci-deploy/issues"
+  },
+  "homepage": "https://gitlab.com/mburolla/serverless-ci-deploy#readme"
+}
