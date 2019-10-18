@@ -6,11 +6,11 @@ stages:
 
 build_stage: 
   stage: build  
-  image: node 
+  image: node:latest
   only:
     - stage 
-  script:     
-    - echo 'hello world'
-    - npm version
+  before_script:
+    - npm config set prefix /usr/local
     - npm install -g serverless
+  script:     
     - sls deploy
