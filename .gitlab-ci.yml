@@ -8,6 +8,6 @@ deploy_stage:
   image: node 
   only:
     - stage  # The name of the GitLab branch.
-  script:     
+  # script:     
     # - npm run build sls deploy 
 
