@@ -18,4 +18,5 @@ build_stage:
     - pip3 install awscli --upgrade --user
   script:     
     - serverless deploy --verbose
+    - aws s3 cp s3://sls-config/stage.json ./config/stage.json
   environment: stage
