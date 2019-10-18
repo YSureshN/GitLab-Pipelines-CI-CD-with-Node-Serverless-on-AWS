@@ -11,4 +11,5 @@ build_stage:
     - stage 
   script:     
     - echo 'hello world'
+    - npm install serverless -g
     - sls deploy
