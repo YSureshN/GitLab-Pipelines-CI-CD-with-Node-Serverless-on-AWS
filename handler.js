@@ -24,5 +24,5 @@ module.exports.helloWorld = async (event) => {
 };
 
 module.exports.helloWorldConsole = async (event) => {
-  return { message: 'Hello World!!!' };
+  return { message: `Hello World from ${process.env.THE_ENV}.` }
 }

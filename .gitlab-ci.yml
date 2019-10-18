@@ -1,4 +1,5 @@
 # Reference: https://docs.gitlab.com/ee/ci/yaml/README.html
+# Linter: https://gitlab.com/mburolla/serverless-ci-deploy/-/ci/lint
 
 stages: 
  - build
@@ -10,4 +11,4 @@ build_stage:
     - stage 
   script:     
     - echo 'hello world'
-
+    - sls deploy
