@@ -66,7 +66,7 @@ functions:
 
     # GET /helloworld/ 
     - http:
-        path: helloworld
-        method: get
-        private: false
-        cors: true
+      path: helloworld
+      method: get
+      private: false
+      cors: true
