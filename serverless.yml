@@ -58,15 +58,26 @@ functions:
     handler: handler.helloWorldConsole
     name: ${opt:stage, 'stage'}-helloWorldConsole-Lambda-Function
 
-  # API/Lambda Functions    
-  utility:
-    handler: handler.helloWorld
-    name: ${opt:stage, 'stage'}-serverless-ci-deploy--helloworld
-    events:
+  # API/Lambda Functions
 
-    # GET /helloworld/ 
+  # GET /helloworld/     
+  apiHelloWorld:
+    handler: handler.helloWorld
+    name: ${opt:stage, 'stage'}-api--helloworld
+    events:
     - http:
         path: helloworld
+        method: get
+        private: false
+        cors: true  utility:
+  
+  # GET /trucks/ 
+  apiTrucks:
+    handler: handler.trucks
+    name: ${opt:stage, 'stage'}-api--trucks
+    events:
+    - http:
+        path: trucks
         method: get
         private: false
         cors: true
