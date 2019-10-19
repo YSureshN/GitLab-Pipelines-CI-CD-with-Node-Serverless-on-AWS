@@ -1,0 +1,19 @@
+{
+  "theEnv": {
+    "name": ""
+  },
+  "vpc": {
+    "securityGroupId": "",
+    "subnetId1": "",
+    "subnetId2": ""
+  },
+  "db": {
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": "",
+    "waitForConnections": true,
+    "connectionLimit": 10,
+    "queueLimit": 0
+  }
+}

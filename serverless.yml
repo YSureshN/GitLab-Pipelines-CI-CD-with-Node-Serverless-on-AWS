@@ -1,0 +1,72 @@
+# https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+service: Serverless-CI-Deploy
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'stage'} # stage is our default env, `sls deploy` defaults to stage.
+  role: arn:aws:iam::103346953322:role/serverless-ci-deploy-lambda-role
+  environment:
+    THE_ENV: ${file(./config/${self:provider.stage}.json):theEnv.name}
+    DB_HOST: ${file(./config/${self:provider.stage}.json):db.host}
+    DB_USER: ${file(./config/${self:provider.stage}.json):db.user}
+    DB_PWD: ${file(./config/${self:provider.stage}.json):db.password}
+    DB_DATABASE: ${file(./config/${self:provider.stage}.json):db.database}
+  vpc:
+    securityGroupIds:
+      - ${file(./config/${self:provider.stage}.json):vpc.securityGroupId}
+    subnetIds:
+      - ${file(./config/${self:provider.stage}.json):vpc.subnetId1}
+      - ${file(./config/${self:provider.stage}.json):vpc.subnetId2}
+
+  deploymentBucket:
+    name: ${opt:stage, 'stage'}-sls-deploy
+  runtime: nodejs10.x
+  memorySize: 512 
+  timeout: 10 
+
+# resources: 
+#     Resources:
+#       GatewayResponseDefault4XX:
+#         Type: 'AWS::ApiGateway::GatewayResponse'
+#         Properties:
+#           ResponseParameters:
+#             gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+#             gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+#           ResponseType: DEFAULT_4XX
+#           RestApiId:
+#             Ref: 'ApiGatewayRestApi'
+
+package:
+  include:
+    - ../node_modules/**
+    - ../common/**
+
+custom:
+  warmup:
+    enabled: true
+    prewarm: false
+    events: 
+      - schedule: rate(15 minutes)
+
+plugins:
+  - serverless-plugin-warmup
+
+functions:
+
+  # Lambda Functions
+  helloWorld:
+    handler: handler.helloWorldConsole
+    name: ${opt:stage, 'stage'}-helloWorldConsole-Lambda-Function
+
+  # API/Lambda Functions    
+  utility:
+    handler: handler.helloWorld
+    name: ${opt:stage, 'stage'}-serverless-ci-deploy--helloworld
+    events:
+
+    # GET /helloworld/ 
+    - http:
+        path: helloworld
+        method: get
+        private: false
+        cors: true
