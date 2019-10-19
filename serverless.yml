@@ -71,3 +71,13 @@ functions:
         private: false
         cors: true
   
+  # GET /trucks/     
+  apiTrucks:
+    handler: handler.trucks
+    name: ${opt:stage, 'stage'}-api--trucks
+    events:
+    - http:
+        path: trucks
+        method: get
+        private: false
+        cors: true
