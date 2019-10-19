@@ -20,3 +20,20 @@ build_stage:
     - ~/.local/bin/aws s3 cp s3://sls-config/stage.json ./config/stage.json
     - sls deploy --verbose
   environment: stage
+
+build_prod: 
+  stage: build  
+  image: node:latest
+  only:
+    - master 
+  before_script:
+    - npm config set prefix /usr/local
+    - npm install -g serverless
+    - npm install
+    - apt-get update
+    - apt-get -y install python3-pip
+    - pip3 install awscli --upgrade --user
+  script:     
+    - ~/.local/bin/aws s3 cp s3://sls-config/prod.json ./config/prod.json
+    - sls deploy --verbose
+  environment: prod
