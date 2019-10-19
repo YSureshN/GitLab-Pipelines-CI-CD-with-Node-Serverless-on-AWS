@@ -7,6 +7,7 @@
 
 const headers = { 
   'x-api-version' : '0.0.1',
+  'x-env': `${process.env.THE_ENV}`,
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Credentials': true
 };
