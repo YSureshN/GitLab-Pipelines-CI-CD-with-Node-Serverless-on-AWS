@@ -3,6 +3,7 @@
 
 stages: 
  - deploy
+ - test
 
 ################################################################################
 # STAGING                                                                      #
@@ -23,6 +24,15 @@ deploy_stage:
   script:     
     - ~/.local/bin/aws s3 cp s3://sls-config/stage.json ./config/stage.json
     - sls deploy --verbose
+  environment: stage
+
+test_stage:
+  stage: test  
+  image: node:latest
+  only:
+    - stage 
+  script:     
+    - npm test
   environment: stage
 
 ################################################################################
