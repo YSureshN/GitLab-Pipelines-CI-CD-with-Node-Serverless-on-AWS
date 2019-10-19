@@ -69,7 +69,7 @@ functions:
         path: helloworld
         method: get
         private: false
-        cors: true  utility:
+        cors: true
   
   # GET /trucks/ 
   apiTrucks:
@@ -81,3 +81,4 @@ functions:
         method: get
         private: false
         cors: true
+        
