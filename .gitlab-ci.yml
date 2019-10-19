@@ -2,10 +2,10 @@
 # Linter: https://gitlab.com/mburolla/serverless-ci-deploy/-/ci/lint
 
 stages: 
- - build
+ - deploy
 
-build_stage: 
-  stage: build  
+deploy_stage: 
+  stage: deploy  
   image: node:latest
   only:
     - stage 
@@ -21,8 +21,8 @@ build_stage:
     - sls deploy --verbose
   environment: stage
 
-build_prod: 
-  stage: build  
+deploy_prod: 
+  stage: deploy  
   image: node:latest
   only:
     - master 
