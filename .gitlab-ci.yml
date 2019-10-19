@@ -4,6 +4,10 @@
 stages: 
  - deploy
 
+################################################################################
+# STAGING                                                                      #
+################################################################################
+
 deploy_stage: 
   stage: deploy  
   image: node:latest
@@ -20,6 +24,10 @@ deploy_stage:
     - ~/.local/bin/aws s3 cp s3://sls-config/stage.json ./config/stage.json
     - sls deploy --verbose
   environment: stage
+
+################################################################################
+# PRODUCTION                                                                   #
+################################################################################
 
 deploy_prod: 
   stage: deploy  

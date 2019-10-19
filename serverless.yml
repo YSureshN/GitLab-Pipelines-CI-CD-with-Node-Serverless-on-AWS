@@ -3,7 +3,7 @@ service: Serverless-CI-Deploy
 
 provider:
   name: aws
-  stage: ${opt:stage, 'stage'} # stage is our default env, `sls deploy` defaults to stage.
+  stage: ${opt:stage, 'stage'}
   role: arn:aws:iam::103346953322:role/serverless-ci-deploy-lambda-role
   environment:
     THE_ENV: ${file(./config/${self:provider.stage}.json):theEnv.name}
@@ -24,17 +24,17 @@ provider:
   memorySize: 512 
   timeout: 10 
 
-# resources: 
-#     Resources:
-#       GatewayResponseDefault4XX:
-#         Type: 'AWS::ApiGateway::GatewayResponse'
-#         Properties:
-#           ResponseParameters:
-#             gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-#             gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
-#           ResponseType: DEFAULT_4XX
-#           RestApiId:
-#             Ref: 'ApiGatewayRestApi'
+resources: 
+    Resources:
+      GatewayResponseDefault4XX:
+        Type: 'AWS::ApiGateway::GatewayResponse'
+        Properties:
+          ResponseParameters:
+            gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+            gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+          ResponseType: DEFAULT_4XX
+          RestApiId:
+            Ref: 'ApiGatewayRestApi'
 
 package:
   include:
