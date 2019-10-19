@@ -52,25 +52,21 @@ plugins:
   - serverless-plugin-warmup
 
 functions:
-  
-  # Lambda
-  # utilityLambdaAuthorizer:
-  #   handler: authorizer.utilityLambdaAuthorizer
-  #   name: Util-API-${opt:stage, 'stage'}-Authorizer
 
+  # Lambda Functions
   helloWorld:
     handler: handler.helloWorldConsole
     name: ${opt:stage, 'stage'}-helloWorldConsole-Lambda-Function
 
-  # API    
-  # utility:
-  #   handler: handler.helloWorld
-  #   name: ${opt:stage, 'stage'}-Serverless-CI-Deplly--HelloWorld
-  #   events:
+  # API/Lambda Functions    
+  utility:
+    handler: handler.helloWorld
+    name: ${opt:stage, 'stage'}-serverless-ci-deploy--helloworld
+    events:
 
-  #   # GET /helloworld/ 
-  #   - http:
-  #       path: helloworld
-  #       method: get
-  #       private: false
-  #       cors: true
+    # GET /helloworld/ 
+    - http:
+        path: helloworld
+        method: get
+        private: false
+        cors: true

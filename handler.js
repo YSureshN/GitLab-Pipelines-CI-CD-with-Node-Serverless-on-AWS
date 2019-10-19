@@ -17,12 +17,15 @@ const headers = {
 module.exports.helloWorld = async (event) => {
   const lambdaProxyResponse = { 
     statusCode: 200,
-    body: {message: 'Hello World!'},
+    body: JSON.stringify({message: `Hello World from ${process.env.THE_ENV}.`}),
     headers: headers
   }
   return lambdaProxyResponse;
 };
 
+/**
+ * Lambda function.
+ */
 module.exports.helloWorldConsole = async (event) => {
   return { message: `Hello World from ${process.env.THE_ENV}.` }
-}
+};
