@@ -53,3 +53,7 @@ nbproject
 .node_history
 dump.rdb
 serverless
+
+# Configuration Files
+./config/stage.json
+./config/prod.json
