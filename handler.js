@@ -1,8 +1,8 @@
 //
 // Name: handler.js
 // Auth: Martin Burolla
-// Desc: The one and only handler for our serverless Lambda functions.
 // Date: 10/18/2019
+// Desc: The one and only handler for our serverless Lambda functions.
 //
 
 const headers = { 

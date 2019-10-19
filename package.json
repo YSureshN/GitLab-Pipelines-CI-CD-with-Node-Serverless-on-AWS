@@ -4,7 +4,7 @@
   "description": "Simple project that shows how to deploy a Node Serverless project using GitLab Pipelines",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/mburolla/serverless-ci-deploy#readme",
   "dependencies": {
+    "mocha": "^6.2.2",
     "serverless-plugin-warmup": "^4.7.0-rc.1"
   }
 }
