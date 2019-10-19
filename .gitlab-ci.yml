@@ -35,5 +35,5 @@ build_prod:
     - pip3 install awscli --upgrade --user
   script:     
     - ~/.local/bin/aws s3 cp s3://sls-config/prod.json ./config/prod.json
-    - sls deploy --verbose
+    - sls deploy --stage prod --verbose
   environment: prod
