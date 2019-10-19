@@ -25,18 +25,6 @@ module.exports.helloWorld = async (event) => {
 };
 
 /**
- * GET /trucks
- */
-module.exports.trucks = async (event) => {
-  const lambdaProxyResponse = { 
-    statusCode: 200,
-    body: JSON.stringify({trucks: [{id: 123, model: 'ford'}, {id: 345, model: 'chevy'} ]}),
-    headers: headers
-  }
-  return lambdaProxyResponse;
-};
-
-/**
  * Lambda function.
  */
 module.exports.helloWorldConsole = async (event) => {
