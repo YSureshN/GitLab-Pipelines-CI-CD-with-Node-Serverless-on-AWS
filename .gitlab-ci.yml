@@ -31,6 +31,8 @@ test_stage:
   image: node:latest
   only:
     - stage 
+  before_script:
+    - npm install
   script:     
     - npm test
   environment: stage
