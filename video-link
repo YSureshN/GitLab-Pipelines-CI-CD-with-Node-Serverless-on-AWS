@@ -1,3 +1,12 @@
 https://gitlab.com/mburolla/serverless-ci-deploy
 
 https://www.youtube.com/watch?v=43--9J-BW78
+
+====================================
+
+Serverless Applications with AWS Lambda and API Gateway
+
+A popular approach to running "serverless" web applications is to implement the application functionality as one or more f
+unctions in AWS Lambda and then expose these for public consumption using Amazon API Gateway.
+
+https://registry.terraform.io/providers/hashicorp/aws/2.33.0/docs/guides/serverless-with-aws-lambda-and-api-gateway
