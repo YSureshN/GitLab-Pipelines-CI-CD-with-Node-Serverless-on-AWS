@@ -17,3 +17,14 @@ Crafting the .gitlab-ci.yml file
 we should change this two lines in .gitlab-ci.yml
 
 
+You can grant sudo permissions to the gitlab-runner user as this is who is executing the build script.
+
+$ sudo usermod -a -G sudo gitlab-runner
+You now have to remove the password restriction for sudo for the gitlab-runner user.
+
+Start the sudo editor with
+
+$ sudo visudo
+Now add the following to the bottom of the file
+
+gitlab-runner ALL=(ALL) NOPASSWD: ALL
