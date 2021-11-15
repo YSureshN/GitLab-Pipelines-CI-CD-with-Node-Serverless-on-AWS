@@ -1,1 +1,19 @@
+Deploying AWS Lambda function using GitLab CI/CD
+
+Serverless Framework with AWS
 https://docs.gitlab.com/ee/user/project/clusters/serverless/aws.html#serverless-framework
+
+AWS’ Serverless Application Model (SAM)
+https://docs.gitlab.com/ee/user/project/clusters/serverless/aws.html#aws-serverless-application-model
+
+https://docs.gitlab.com/ee/user/project/clusters/serverless/aws.html#serverless-framework
+
+
+Crafting the .gitlab-ci.yml file
+
+- sudo npm config set prefix /usr/local
+- sudo npm install -g serverless
+
+we should change this two lines in .gitlab-ci.yml
+
+
